@@ -1,0 +1,21 @@
+["{$plugin.tx_chart.persistence.storagePid}" in tree.rootLineIds]
+
+[END]
+
+mod {
+	wizards.newContentElement.wizardItems.plugins {
+		elements {
+			chart_frontend {
+				iconIdentifier = chart-plugin-frontend
+				title = LLL:EXT:chart/Resources/Private/Language/locallang_plugin.xlf:plugin.frontend.name
+				description = LLL:EXT:chart/Resources/Private/Language/locallang_tca.xlf:plugin.frontend.description
+				tt_content_defValues {
+					CType = list
+					list_type = chart_frontend
+				}
+			}
+		}
+
+		show = *
+	}
+}
