@@ -4,6 +4,7 @@ namespace Ps14\Chart\Provider;
 
 use FluidTYPO3\Flux\Provider\AbstractProvider;
 use FluidTYPO3\Flux\Provider\ProviderInterface;
+use FluidTYPO3\Flux\Form;
 use Ps\EntityProduct\Domain\Model\Attribute;
 use Ps\EntityProduct\Domain\Model\AttributeOption;
 use Ps\EntityProduct\Domain\Model\AttributeValue;
@@ -63,6 +64,13 @@ class DatasetProvider extends AbstractProvider implements ProviderInterface {
 			'xyz',
 			'XYZ:'
 		);
+
+//		$sheet = $form->createContainer(Form\Container\Sheet::class, 'sheets', 'Define sheets');
+//		$sheet->setDescription('Define the sheets that contain form fields when editors edit your content type. Save the content type record to refresh changes.');
+		$section = $form->createContainer(Form\Container\Section::class, 'Datasets');
+		$sheetObject = $section->createContainer(Form\Container\SectionObject::class, 'Dataset');
+		$sheetObject->createField(Form\Field\Input::class, 'name', 'LLL:EXT:flux/Resources/Private/Language/locallang.xlf:content_types.sheetName');
+		$sheetObject->createField(Form\Field\Input::class, 'label', 'LLL:EXT:flux/Resources/Private/Language/locallang.xlf:content_types.sheetLabel');
 
 		/**
 		if(isset($row['uid']) === false) {
