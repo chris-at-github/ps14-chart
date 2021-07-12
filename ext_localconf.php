@@ -31,4 +31,8 @@ call_user_func(function() {
 		\TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
 		['source' => 'EXT:chart/Resources/Public/Icons/plugin_frontend.svg']
 	);
+
+	// -------------------------------------------------------------------------------------------------------------------
+	// Flux
+	\FluidTYPO3\Flux\Core::registerConfigurationProvider(\Ps14\Chart\Provider\DatasetProvider::class);
 });
