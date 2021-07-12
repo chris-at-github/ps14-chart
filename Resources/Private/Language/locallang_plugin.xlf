@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:chart/Resources/Private/Language/locallang_db" date="2021-07-12T21:54:04Z" product-name="chart">
+		<header/>
+		<body>
+			<trans-unit id="tx_chart_frontend.name" resname="tx_chart_frontend.name">
+				<source>Chart Frontend</source>
+			</trans-unit>
+			<trans-unit id="tx_chart_frontend.description" resname="tx_chart_frontend.description">
+				<source></source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
