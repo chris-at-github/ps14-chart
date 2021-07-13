@@ -18,6 +18,18 @@
 			<trans-unit id="tx_chart_domain_model_chart.label_axis_y" resname="tx_chart_domain_model_chart.label_axis_y">
 				<source>Label Axis Y</source>
 			</trans-unit>
+			<trans-unit id="tx_chart_domain_model_chart.data_type_axis_x" resname="tx_chart_domain_model_chart.data_type_axis_x">
+				<source>Data Type Axis X</source>
+			</trans-unit>
+			<trans-unit id="tx_chart_domain_model_chart.data_type_axis_y" resname="tx_chart_domain_model_chart.data_type_axis_y">
+				<source>Data Type Axis Y</source>
+			</trans-unit>
+			<trans-unit id="tx_chart_domain_model_chart.data_type.int" resname="tx_chart_domain_model_chart.data_type.int">
+				<source>Int</source>
+			</trans-unit>
+			<trans-unit id="tx_chart_domain_model_chart.data_type.float" resname="tx_chart_domain_model_chart.data_type.float">
+				<source>Float</source>
+			</trans-unit>
 			<trans-unit id="tx_chart_domain_model_chart.datasets" resname="tx_chart_domain_model_chart.datasets">
 				<source>Datasets</source>
 			</trans-unit>
@@ -29,6 +41,22 @@
 			</trans-unit>
 			<trans-unit id="tx_chart_domain_model_dataset.color" resname="tx_chart_domain_model_dataset.color">
 				<source>Color</source>
+			</trans-unit>
+			<trans-unit id="tx_chart_domain_model_value.pi_flexform" resname="tx_chart_domain_model_value.pi_flexform">
+				<source>Values</source>
+			</trans-unit>
+
+			<trans-unit id="tt_content.chart.title" resname="tt_content.chart.title">
+				<source>Ps14 Charts</source>
+			</trans-unit>
+			<trans-unit id="tt_content.chart.description" resname="tt_content.chart.description">
+				<source>Line-, Bar- or Donat-Charts with different configurations</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_chart_chart" resname="tt_content.tx_chart_chart">
+				<source>Chart</source>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_chart_values" resname="tt_content.tx_chart_values">
+				<source>Chart Values</source>
 			</trans-unit>
 		</body>
 	</file>

@@ -19,3 +19,20 @@ mod {
 		show = *
 	}
 }
+
+mod.wizards.newContentElement.wizardItems {
+	common {
+		elements {
+			chart_content {
+				iconIdentifier = ps14-content-chart
+				title = LLL:EXT:chart/Resources/Private/Language/locallang_tca.xlf:tt_content.chart.title
+				description = LLL:EXT:chart/Resources/Private/Language/locallang_tca.xlf:tt_content.chart.description
+				tt_content_defValues {
+					CType = chart
+				}
+			}
+		}
+
+		show := addToList(chart_content)
+	}
+}

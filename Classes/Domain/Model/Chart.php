@@ -14,196 +14,226 @@ namespace Ps14\Chart\Domain\Model;
  *  (c) 2021 Christian Pschorr <pschorr.christian@gmail.com>
  *
  ***/
+
 /**
  * Chart
  */
-class Chart extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
-{
+class Chart extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
-    /**
-     * title
-     * 
-     * @var string
-     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
-     */
-    protected $title = '';
+	/**
+	 * title
+	 *
+	 * @var string
+	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+	 */
+	protected $title = '';
 
-    /**
-     * alternativeTitle
-     * 
-     * @var string
-     */
-    protected $alternativeTitle = '';
+	/**
+	 * alternativeTitle
+	 *
+	 * @var string
+	 */
+	protected $alternativeTitle = '';
 
-    /**
-     * labelAxisX
-     * 
-     * @var string
-     */
-    protected $labelAxisX = '';
+	/**
+	 * labelAxisX
+	 *
+	 * @var string
+	 */
+	protected $labelAxisX = '';
 
-    /**
-     * labelAxisY
-     * 
-     * @var string
-     */
-    protected $labelAxisY = '';
+	/**
+	 * dataType
+	 *
+	 * @var string
+	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+	 */
+	protected $dataTypeAxisX = '';
 
-    /**
-     * datasets
-     * 
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ps14\Chart\Domain\Model\Dataset>
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
-     */
-    protected $datasets = null;
+	/**
+	 * labelAxisY
+	 *
+	 * @var string
+	 */
+	protected $labelAxisY = '';
 
-    /**
-     * __construct
-     */
-    public function __construct()
-    {
+	/**
+	 * dataType
+	 *
+	 * @var string
+	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
+	 */
+	protected $dataTypeAxisY = '';
 
-        //Do not remove the next line: It would break the functionality
-        $this->initializeObject();
-    }
+	/**
+	 * datasets
+	 *
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ps14\Chart\Domain\Model\Dataset>
+	 * @TYPO3\CMS\Extbase\Annotation\ORM\Cascade("remove")
+	 */
+	protected $datasets = null;
 
-    /**
-     * Initializes all ObjectStorage properties when model is reconstructed from DB (where __construct is not called)
-     * Do not modify this method!
-     * It will be rewritten on each save in the extension builder
-     * You may modify the constructor of this class instead
-     * 
-     * @return void
-     */
-    protected function initializeObject()
-    {
-        $this->datasets = $this->datasets ?: new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-    }
+	/**
+	 * __construct
+	 */
+	public function __construct() {
 
-    /**
-     * Returns the title
-     * 
-     * @return string $title
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
+		//Do not remove the next line: It would break the functionality
+		$this->initializeObject();
+	}
 
-    /**
-     * Sets the title
-     * 
-     * @param string $title
-     * @return void
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-    }
+	/**
+	 * Initializes all ObjectStorage properties when model is reconstructed from DB (where __construct is not called)
+	 * Do not modify this method!
+	 * It will be rewritten on each save in the extension builder
+	 * You may modify the constructor of this class instead
+	 *
+	 * @return void
+	 */
+	protected function initializeObject() {
+		$this->datasets = $this->datasets ?: new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+	}
 
-    /**
-     * Returns the alternativeTitle
-     * 
-     * @return string $alternativeTitle
-     */
-    public function getAlternativeTitle()
-    {
-        return $this->alternativeTitle;
-    }
+	/**
+	 * Returns the title
+	 *
+	 * @return string $title
+	 */
+	public function getTitle() {
+		return $this->title;
+	}
 
-    /**
-     * Sets the alternativeTitle
-     * 
-     * @param string $alternativeTitle
-     * @return void
-     */
-    public function setAlternativeTitle($alternativeTitle)
-    {
-        $this->alternativeTitle = $alternativeTitle;
-    }
+	/**
+	 * Sets the title
+	 *
+	 * @param string $title
+	 * @return void
+	 */
+	public function setTitle($title) {
+		$this->title = $title;
+	}
 
-    /**
-     * Returns the labelAxisX
-     * 
-     * @return string $labelAxisX
-     */
-    public function getLabelAxisX()
-    {
-        return $this->labelAxisX;
-    }
+	/**
+	 * Returns the alternativeTitle
+	 *
+	 * @return string $alternativeTitle
+	 */
+	public function getAlternativeTitle() {
+		return $this->alternativeTitle;
+	}
 
-    /**
-     * Sets the labelAxisX
-     * 
-     * @param string $labelAxisX
-     * @return void
-     */
-    public function setLabelAxisX($labelAxisX)
-    {
-        $this->labelAxisX = $labelAxisX;
-    }
+	/**
+	 * Sets the alternativeTitle
+	 *
+	 * @param string $alternativeTitle
+	 * @return void
+	 */
+	public function setAlternativeTitle($alternativeTitle) {
+		$this->alternativeTitle = $alternativeTitle;
+	}
 
-    /**
-     * Returns the labelAxisY
-     * 
-     * @return string $labelAxisY
-     */
-    public function getLabelAxisY()
-    {
-        return $this->labelAxisY;
-    }
+	/**
+	 * Returns the labelAxisX
+	 *
+	 * @return string $labelAxisX
+	 */
+	public function getLabelAxisX() {
+		return $this->labelAxisX;
+	}
 
-    /**
-     * Sets the labelAxisY
-     * 
-     * @param string $labelAxisY
-     * @return void
-     */
-    public function setLabelAxisY($labelAxisY)
-    {
-        $this->labelAxisY = $labelAxisY;
-    }
+	/**
+	 * Sets the labelAxisX
+	 *
+	 * @param string $labelAxisX
+	 * @return void
+	 */
+	public function setLabelAxisX($labelAxisX) {
+		$this->labelAxisX = $labelAxisX;
+	}
 
-    /**
-     * Adds a Dataset
-     * 
-     * @param \Ps14\Chart\Domain\Model\Dataset $dataset
-     * @return void
-     */
-    public function addDataset(\Ps14\Chart\Domain\Model\Dataset $dataset)
-    {
-        $this->datasets->attach($dataset);
-    }
+	/**
+	 * Returns the labelAxisY
+	 *
+	 * @return string $labelAxisY
+	 */
+	public function getLabelAxisY() {
+		return $this->labelAxisY;
+	}
 
-    /**
-     * Removes a Dataset
-     * 
-     * @param \Ps14\Chart\Domain\Model\Dataset $datasetToRemove The Dataset to be removed
-     * @return void
-     */
-    public function removeDataset(\Ps14\Chart\Domain\Model\Dataset $datasetToRemove)
-    {
-        $this->datasets->detach($datasetToRemove);
-    }
+	/**
+	 * Sets the labelAxisY
+	 *
+	 * @param string $labelAxisY
+	 * @return void
+	 */
+	public function setLabelAxisY($labelAxisY) {
+		$this->labelAxisY = $labelAxisY;
+	}
 
-    /**
-     * Returns the datasets
-     * 
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ps14\Chart\Domain\Model\Dataset> $datasets
-     */
-    public function getDatasets()
-    {
-        return $this->datasets;
-    }
+	/**
+	 * Adds a Dataset
+	 *
+	 * @param \Ps14\Chart\Domain\Model\Dataset $dataset
+	 * @return void
+	 */
+	public function addDataset(\Ps14\Chart\Domain\Model\Dataset $dataset) {
+		$this->datasets->attach($dataset);
+	}
 
-    /**
-     * Sets the datasets
-     * 
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ps14\Chart\Domain\Model\Dataset> $datasets
-     * @return void
-     */
-    public function setDatasets(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $datasets)
-    {
-        $this->datasets = $datasets;
-    }
+	/**
+	 * Removes a Dataset
+	 *
+	 * @param \Ps14\Chart\Domain\Model\Dataset $datasetToRemove The Dataset to be removed
+	 * @return void
+	 */
+	public function removeDataset(\Ps14\Chart\Domain\Model\Dataset $datasetToRemove) {
+		$this->datasets->detach($datasetToRemove);
+	}
+
+	/**
+	 * Returns the datasets
+	 *
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ps14\Chart\Domain\Model\Dataset> $datasets
+	 */
+	public function getDatasets() {
+		return $this->datasets;
+	}
+
+	/**
+	 * Sets the datasets
+	 *
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Ps14\Chart\Domain\Model\Dataset> $datasets
+	 * @return void
+	 */
+	public function setDatasets(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $datasets) {
+		$this->datasets = $datasets;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getDataTypeAxisX(): string {
+		return $this->dataTypeAxisX;
+	}
+
+	/**
+	 * @param string $dataTypeAxisX
+	 */
+	public function setDataTypeAxisX(string $dataTypeAxisX): void {
+		$this->dataTypeAxisX = $dataTypeAxisX;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getDataTypeAxisY(): string {
+		return $this->dataTypeAxisY;
+	}
+
+	/**
+	 * @param string $dataTypeAxisY
+	 */
+	public function setDataTypeAxisY(string $dataTypeAxisY): void {
+		$this->dataTypeAxisY = $dataTypeAxisY;
+	}
 }

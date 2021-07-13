@@ -157,6 +157,79 @@
                     "relations": []
                 }
             }
+        },
+        {
+            "config": {
+                "position": [
+                    905,
+                    261
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": false,
+                    "_default1_show": false,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": []
+                },
+                "name": "Value",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": false,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": true,
+                    "type": "Entity",
+                    "uid": "90511947900"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "title",
+                            "propertyType": "String",
+                            "uid": "256745634904"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "piFlexform",
+                            "propertyType": "Text",
+                            "uid": "391391769004"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsL10nModeExclude": false,
+                            "propertyIsRequired": false,
+                            "propertyName": "content",
+                            "propertyType": "Integer",
+                            "uid": "1576745834947"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": []
+                }
+            }
         }
     ],
     "properties": {
@@ -176,8 +249,8 @@
         },
         "extensionKey": "chart",
         "name": "Ps14 Chart",
-        "originalExtensionKey": "",
-        "originalVendorName": "",
+        "originalExtensionKey": "chart",
+        "originalVendorName": "Ps14",
         "persons": [
             {
                 "company": "",
@@ -215,7 +288,7 @@
     ],
     "storagePath": "D:\/Projekte\/Kist Escherich\/01_Development\/typo3conf\/ext\/",
     "log": {
-        "last_modified": "2021-07-12 09:54",
+        "last_modified": "2021-07-13 08:51",
         "extension_builder_version": "9.11.0",
         "be_user": " (1)"
     }

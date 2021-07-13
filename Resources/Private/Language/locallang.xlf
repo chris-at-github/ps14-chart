@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="EXT:chart/Resources/Private/Language/locallang" date="2021-07-12T21:54:04Z" product-name="chart">
+	<file source-language="en" datatype="plaintext" original="EXT:chart/Resources/Private/Language/locallang" date="2021-07-13T20:51:30Z" product-name="chart">
 		<header/>
 		<body>
 			<trans-unit id="tx_chart_domain_model_chart" resname="tx_chart_domain_model_chart">
@@ -29,6 +29,18 @@
 			</trans-unit>
 			<trans-unit id="tx_chart_domain_model_dataset.color" resname="tx_chart_domain_model_dataset.color">
 				<source>Color</source>
+			</trans-unit>
+			<trans-unit id="tx_chart_domain_model_value" resname="tx_chart_domain_model_value">
+				<source>Value</source>
+			</trans-unit>
+			<trans-unit id="tx_chart_domain_model_value.title" resname="tx_chart_domain_model_value.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="tx_chart_domain_model_value.pi_flexform" resname="tx_chart_domain_model_value.pi_flexform">
+				<source>Pi Flexform</source>
+			</trans-unit>
+			<trans-unit id="tx_chart_domain_model_value.content" resname="tx_chart_domain_model_value.content">
+				<source>Content</source>
 			</trans-unit>
 		</body>
 	</file>

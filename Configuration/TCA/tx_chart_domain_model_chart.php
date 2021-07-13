@@ -21,10 +21,10 @@ return [
 		'iconfile' => 'EXT:chart/Resources/Public/Icons/tx_chart_domain_model_chart.gif'
 	],
 	'interface' => [
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, alternative_title, label_axis_x, label_axis_y, datasets',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, alternative_title, label_axis_x, data_type_axis_x, label_axis_y, data_type_axis_y, datasets',
 	],
 	'types' => [
-		'1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, alternative_title, label_axis_x, label_axis_y, datasets, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+		'1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, alternative_title, label_axis_x, data_type_axis_x, label_axis_y, data_type_axis_y, datasets, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
 	],
 	'columns' => [
 		'sys_language_uid' => [
@@ -142,6 +142,22 @@ return [
 				'eval' => 'trim'
 			],
 		],
+		'data_type_axis_x' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:chart/Resources/Private/Language/locallang_tca.xlf:tx_chart_domain_model_chart.data_type_axis_x',
+			'config' => [
+				'type' => 'select',
+				'renderType' => 'selectSingle',
+				'items' => [
+					['LLL:EXT:chart/Resources/Private/Language/locallang_tca.xlf:tx_chart_domain_model_chart.data_type.int', 'int'],
+					['LLL:EXT:chart/Resources/Private/Language/locallang_tca.xlf:tx_chart_domain_model_chart.data_type.float', 'float'],
+				],
+				'size' => 1,
+				'maxitems' => 1,
+				'eval' => 'required',
+				'default' => 'int',
+			],
+		],
 		'label_axis_y' => [
 			'exclude' => true,
 			'label' => 'LLL:EXT:chart/Resources/Private/Language/locallang_tca.xlf:tx_chart_domain_model_chart.label_axis_y',
@@ -149,6 +165,22 @@ return [
 				'type' => 'input',
 				'size' => 40,
 				'eval' => 'trim'
+			],
+		],
+		'data_type_axis_y' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:chart/Resources/Private/Language/locallang_tca.xlf:tx_chart_domain_model_chart.data_type_axis_y',
+			'config' => [
+				'type' => 'select',
+				'renderType' => 'selectSingle',
+				'items' => [
+					['LLL:EXT:chart/Resources/Private/Language/locallang_tca.xlf:tx_chart_domain_model_chart.data_type.int', 'int'],
+					['LLL:EXT:chart/Resources/Private/Language/locallang_tca.xlf:tx_chart_domain_model_chart.data_type.float', 'float'],
+				],
+				'size' => 1,
+				'maxitems' => 1,
+				'eval' => 'required',
+				'default' => 'int',
 			],
 		],
 		'datasets' => [
