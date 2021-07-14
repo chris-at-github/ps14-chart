@@ -27,3 +27,33 @@ plugin.tx_chart {
 		#callDefaultActionIfActionCantBeResolved = 1
 	}
 }
+
+tt_content {
+	chart =< lib.contentElement
+	chart {
+		templateName = Chart.html
+		layoutRootPaths {
+			10 = EXT:chart/Resources/Private/Layouts/
+			20 = EXT:xna/Resources/Private/Extensions/Chart/Layouts/
+		}
+
+		templateRootPaths {
+			10 = EXT:chart/Resources/Private/Templates/
+			20 = EXT:xna/Resources/Private/Extensions/Chart/Templates/
+		}
+
+		partialRootPaths {
+			10 = EXT:chart/Resources/Private/Partials/
+			20 = EXT:xna/Resources/Private/Extensions/Chart/Partials/
+		}
+
+		dataProcessing {
+			120 = Ps14\Chart\DataProcessing\ModuleProcessor
+#			120 {
+#				importCss {
+#					10 = /assets/css/modules/facts.css
+#				}
+#			}
+		}
+	}
+}

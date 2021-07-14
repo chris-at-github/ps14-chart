@@ -1,0 +1,11 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Ps14\Chart\:
+    resource: '../Classes/*'
+
+  Ps14\Chart\Provider\LineChartDataProvider:
+    public: true

@@ -135,14 +135,10 @@ return [
 				],
 			]
 		],
-//		'content' => [
-//			'exclude' => true,
-//			'label' => 'LLL:EXT:chart/Resources/Private/Language/locallang_tca.xlf:tx_chart_domain_model_value.content',
-//			'config' => [
-//				'type' => 'input',
-//				'size' => 4,
-//				'eval' => 'int'
-//			]
-//		],
+		'content' => [
+			'config' => [
+				'type' => 'passthrough',
+			],
+		],
 	],
 ];
