@@ -131,9 +131,7 @@ return [
 				'type' => 'select',
 				'renderType' => 'selectSingle',
 				'items' => [
-					['-- Label --', 0],
-					['Color 1', 1],
-					['Color 2', 2],
+					['', '000'],
 				],
 				'size' => 1,
 				'maxitems' => 1,

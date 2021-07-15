@@ -57,3 +57,13 @@ tt_content {
 		}
 	}
 }
+
+plugin.tx_xo.settings.modules {
+	chart {
+		colors {
+			#ff0000 = Red
+		}
+	}
+}
+
+module.tx_xo.settings.modules.chart < plugin.tx_xo.settings.modules.chart

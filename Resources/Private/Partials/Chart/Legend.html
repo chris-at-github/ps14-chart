@@ -1,0 +1,13 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:layout name="Default" />
+	<f:section name="Main">
+		<ul>
+			<f:for each="{chart.datasets}" as="dataset">
+				<li>
+					<span class="chart--legend-item-color" style="background: {dataset.color};"></span>
+					<span class="chart--legend-item-title">{dataset.title}</span>
+				</li>
+			</f:for>
+		</ul>
+	</f:section>
+</html>

@@ -11,7 +11,7 @@ CREATE TABLE tx_chart_domain_model_chart (
 CREATE TABLE tx_chart_domain_model_dataset (
 	chart int(11) unsigned DEFAULT '0' NOT NULL,
 	title varchar(255) DEFAULT '' NOT NULL,
-	color varchar(255) DEFAULT '' NOT NULL
+	color varchar(10) DEFAULT '' NOT NULL
 );
 
 CREATE TABLE tx_chart_domain_model_value (

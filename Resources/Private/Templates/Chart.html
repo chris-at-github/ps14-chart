@@ -1,6 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:xo="http://typo3.org/ns/Ps/Xo/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:layout name="Default" />
 	<f:section name="Main">
-		<f:debug>{_all}</f:debug>
+		<f:render partial="Chart/Configuration" section="Main" arguments="{identifier: data.uid, configuration: chart.configuration}" />
+		<f:render partial="Chart/LineChart" section="Main" arguments="{_all}" />
 	</f:section>
 </html>
