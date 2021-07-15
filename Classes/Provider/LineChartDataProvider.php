@@ -82,9 +82,10 @@ class LineChartDataProvider {
 				'label' => $dataset->getTitle(),
 				'data' => $this->getDatasetData($values, $dataset->getUid()),
 				'fill' => false,
+				'radius' => 0,
+				'borderWidth' => 1.5,
 				'borderColor' => $dataset->getColor(),
-				'backgroundColor' => $dataset->getColor(),
-				'tension' => 0.1
+				'backgroundColor' => $dataset->getColor()
 			];
 		}
 
