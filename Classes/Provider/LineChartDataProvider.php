@@ -80,6 +80,7 @@ class LineChartDataProvider {
 		foreach($chart->getDatasets() as $dataset) {
 			$datasets[] = [
 				'label' => $dataset->getTitle(),
+				'data' => $this->getDatasetData($values, $dataset->getUid()),
 				'fill' => false,
 				'borderColor' => $dataset->getColor(),
 				'backgroundColor' => $dataset->getColor(),
@@ -91,6 +92,24 @@ class LineChartDataProvider {
 	}
 
 	/**
+	 * @param QueryResult $values
+	 * @param int $uid
+	 * @return array
+	 */
+	protected function getDatasetData(QueryResult $values, int $uid): array {
+		$data = [];
+
+		/** @var Value $value */
+		foreach($values as $value) {
+			if(isset($value->getPiFlexformData()[$uid]) === true) {
+				$data[] = $value->getPiFlexformData()[$uid];
+			}
+		}
+
+		return $data;
+	}
+
+	/**
 	 * @param array $data
 	 * @return array
 	 */
@@ -99,16 +118,19 @@ class LineChartDataProvider {
 		$values = $this->getValues($data);
 
 		return [
-			'axis' => [
-				'x' => [
-					'label' => $chart->getLabelAxisX()
+			'object' => $chart,
+			'configuration' => [
+				'axis' => [
+					'x' => [
+						'label' => $chart->getLabelAxisX()
+					],
+					'y' => [
+						'label' => $chart->getLabelAxisY()
+					]
 				],
-				'y' => [
-					'label' => $chart->getLabelAxisY()
-				]
-			],
-			'labels' => $this->getLabels($chart, $values),
-			'datasets' => $this->getDatasets($chart, $values),
+				'labels' => $this->getLabels($chart, $values),
+				'datasets' => $this->getDatasets($chart, $values),
+			]
 		];
 	}
 }
