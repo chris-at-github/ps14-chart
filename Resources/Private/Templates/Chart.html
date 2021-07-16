@@ -2,6 +2,6 @@
 <f:layout name="Default" />
 	<f:section name="Main">
 		<f:render partial="Chart/Configuration" section="Main" arguments="{identifier: data.uid, configuration: chart.configuration}" />
-		<f:render partial="Chart/LineChart" section="Main" arguments="{_all}" />
+		<f:render partial="Chart/LineChart" section="Main" arguments="{identifier: data.uid, chart: chart}" />
 	</f:section>
 </html>

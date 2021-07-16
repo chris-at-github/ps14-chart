@@ -46,18 +46,18 @@ class LineChartDataProvider {
 
 	/**
 	 * @param array $data
-	 * @return QueryResult
+	 * @return object|null
 	 */
-	protected function getValues(array $data): QueryResult {
+	protected function getValues(array $data) {
 		return $this->valueRepository->setQuerySettings(['respectStoragePage' => false])->findAll(['content' => $data['data']['uid']]);
 	}
 
 	/**
 	 * @param Chart $chart
-	 * @param QueryResult $values
+	 * @param object $values
 	 * @return array
 	 */
-	protected function getLabels(Chart $chart, QueryResult $values): array {
+	protected function getLabels(Chart $chart, object $values): array {
 		$labels = [];
 
 		/** @var Value $value */
@@ -70,10 +70,10 @@ class LineChartDataProvider {
 
 	/**
 	 * @param Chart $chart
-	 * @param QueryResult $values
+	 * @param object $values
 	 * @return array
 	 */
-	protected function getDatasets(Chart $chart, QueryResult $values): array {
+	protected function getDatasets(Chart $chart, object $values): array {
 		$datasets = [];
 
 		/** @var Dataset $dataset */
@@ -93,11 +93,11 @@ class LineChartDataProvider {
 	}
 
 	/**
-	 * @param QueryResult $values
+	 * @param object $values
 	 * @param int $uid
 	 * @return array
 	 */
-	protected function getDatasetData(QueryResult $values, int $uid): array {
+	protected function getDatasetData(object $values, int $uid): array {
 		$data = [];
 
 		/** @var Value $value */
