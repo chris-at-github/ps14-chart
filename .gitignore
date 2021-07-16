@@ -1,3 +1,4 @@
 /vendor/
 /Documentation.tmpl/
 /Tests/
+/node_modules/
