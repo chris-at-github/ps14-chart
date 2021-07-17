@@ -7,12 +7,12 @@
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Variablen
-$ce-chart--use-css: true !default;
-$ce-chart--layout-default: true !default;
+$tx-chart--use-css: true !default;
+$tx-chart--layout-default: true !default;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // CSS
-@if($ce-chart--use-css) {
+@if($tx-chart--use-css) {
 
 	// -------------------------------------------------------------------------------------------------------------------
 	// CSS Variablen
@@ -55,7 +55,7 @@ $ce-chart--layout-default: true !default;
 		margin: $spacing-default 0 0 0;
 	}
 
-	@if($ce-chart--layout-default) {
+	@if($tx-chart--layout-default) {
 		.chart--container {
 			height: var(--chart--line-chart-height);
 		}
@@ -67,7 +67,7 @@ $ce-chart--layout-default: true !default;
 			--chart--line-chart-height: 400px;
 		}
 
-		@if($ce-chart--layout-default) {
+		@if($tx-chart--layout-default) {
 			.chart {
 				@include make-row();
 				flex-direction: row-reverse;
@@ -93,3 +93,7 @@ $ce-chart--layout-default: true !default;
 		}
 	}
 }
+
+// ---------------------------------------------------------------------------------------------------------------------
+// XNA Override
+@import '../../../../xna/Resources/Public/Sass/xna/modules/chart';
