@@ -1,7 +1,3 @@
-// import Chart from 'chart.js/auto';
-// import Filter from "../modules/filter";
-//
-
 (function () {
 	'use strict';
 

@@ -14,6 +14,7 @@ mix.options({
 	processCssUrls: false
 });
 
+mix.js('Resources/Public/Js/chart.js', 'assets/js/chart.js');
 mix.sass('Resources/Public/Sass/chart.scss', 'assets/css/modules/chart.css')
 	.options({
 		postCss: [

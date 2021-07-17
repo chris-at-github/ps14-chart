@@ -49,11 +49,16 @@ tt_content {
 
 		dataProcessing {
 			120 = Ps14\Chart\DataProcessing\ModuleProcessor
-#			120 {
-#				importCss {
-#					10 = /assets/css/modules/facts.css
-#				}
-#			}
+			120 {
+				importCss {
+					10 = /assets/css/modules/chart.css
+				}
+
+				importJs {
+					10 = /assets/js/chartjs.js
+					20 = /assets/js/chart.js
+				}
+			}
 		}
 	}
 }

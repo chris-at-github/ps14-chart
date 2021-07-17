@@ -1,0 +1,95 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Bootstrap & XNA
+@import '../../../../xna/Resources/Public/Sass/functions';
+@import '../../../../xna/Resources/Public/Sass/variables';
+@import '../../../../xna/Resources/Public/Sass/mixins';
+@import '../../../../xna/Resources/Public/Sass/definitions';
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Variablen
+$ce-chart--use-css: true !default;
+$ce-chart--layout-default: true !default;
+
+// ---------------------------------------------------------------------------------------------------------------------
+// CSS
+@if($ce-chart--use-css) {
+
+	// -------------------------------------------------------------------------------------------------------------------
+	// CSS Variablen
+	:root {
+		--chart--line-chart-height: 275px;
+	}
+
+	.chart {
+		margin-top: $spacing-default;
+	}
+
+	.chart--legend {
+		ul {
+			margin: 0 rem(-10px);
+			padding: 0;
+			list-style: none;
+			display: flex;
+		}
+
+		li {
+			position: relative;
+			padding: 0 rem(10px);
+		}
+
+		.chart--legend-item-color {
+			position: absolute;
+			top: 8px; left: rem(10px);
+			display: block;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+		}
+
+		.chart--legend-item-title {
+			padding: 0 0 0 18px;
+		}
+	}
+
+	.chart--container {
+		margin: $spacing-default 0 0 0;
+	}
+
+	@if($ce-chart--layout-default) {
+		.chart--container {
+			height: var(--chart--line-chart-height);
+		}
+	}
+
+	// >= 768px
+	@include media-breakpoint-up(md) {
+		:root {
+			--chart--line-chart-height: 400px;
+		}
+
+		@if($ce-chart--layout-default) {
+			.chart {
+				@include make-row();
+				flex-direction: row-reverse;
+			}
+
+			.chart--legend {
+				& {
+					@include make-col-ready();
+					@include make-col(4);
+					margin-top: $spacing-default;
+				}
+
+				ul {
+					flex-direction: column;
+				}
+			}
+
+			.chart--container {
+				@include make-col-ready();
+				@include make-col(8);
+				margin-top: 0;
+			}
+		}
+	}
+}
