@@ -2,6 +2,7 @@
 
 namespace Ps14\Chart\Provider;
 
+use FluidTYPO3\Flux\Form\Field\Input;
 use FluidTYPO3\Flux\Provider\AbstractProvider;
 use FluidTYPO3\Flux\Provider\ProviderInterface;
 use FluidTYPO3\Flux\Form;
@@ -53,13 +54,13 @@ class DataValueProvider extends AbstractProvider implements ProviderInterface {
 	 * @return \FluidTYPO3\Flux\Form\FormInterface|\FluidTYPO3\Flux\Form\Form|null
 	 */
 	public function getForm(array $row) {
+
 		$form = \FluidTYPO3\Flux\Form::create();
 
 		/** @var Chart $chart */
 		$chart = $this->objectManager->get(ChartRepository::class)->findByUid($this->getChartUid($row));
 
 		if(empty($chart) === false) {
-
 			$field = $form->createField(
 				$this->getFieldType($chart->getDataTypeAxisX()),
 				'valueAxisX',
@@ -124,7 +125,7 @@ class DataValueProvider extends AbstractProvider implements ProviderInterface {
 		$type = '';
 
 		if($dataType === 'int' || $dataType === 'float') {
-			$type = 'input';
+			$type = Input::class;
 		}
 
 		return $type;
