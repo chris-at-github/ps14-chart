@@ -30,3 +30,7 @@ mod.wizards.newContentElement.wizardItems {
 		show := addToList(chart_content)
 	}
 }
+
+mod.web_list.table {
+	tx_chart_domain_model_value.hideTable = 1
+}
