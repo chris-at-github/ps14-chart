@@ -3,6 +3,10 @@
 <f:section name="Main">
 	<div class="chart chart--line-chart" data-identifier="{identifier}">
 		<div class="chart--legend">
+			<f:if condition="{chart.object.description}">
+				<div class="chart--description"><f:format.html>{chart.object.description}</f:format.html></div>
+			</f:if>
+
 			<f:render partial="Chart/Legend" section="Main" arguments="{chart: chart.object}" />
 		</div>
 

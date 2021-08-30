@@ -17,7 +17,7 @@ $tx-chart--layout-default: true !default;
 	// -------------------------------------------------------------------------------------------------------------------
 	// CSS Variablen
 	:root {
-		--chart--line-chart-height: 275px;
+		--chart--line-chart-height: 315px;
 	}
 
 	.chart {
@@ -25,6 +25,10 @@ $tx-chart--layout-default: true !default;
 	}
 
 	.chart--legend {
+		.chart--legend-title {
+			margin: rem(15px 0 5px 0);
+		}
+
 		ul {
 			margin: 0 rem(-10px);
 			padding: 0;
@@ -39,7 +43,7 @@ $tx-chart--layout-default: true !default;
 
 		.chart--legend-item-color {
 			position: absolute;
-			top: 8px; left: rem(10px);
+			top: 9px; left: rem(10px);
 			display: block;
 			width: 10px;
 			height: 10px;
@@ -64,7 +68,7 @@ $tx-chart--layout-default: true !default;
 	// >= 768px
 	@include media-breakpoint-up(md) {
 		:root {
-			--chart--line-chart-height: 400px;
+			--chart--line-chart-height: 425px;
 		}
 
 		@if($tx-chart--layout-default) {
@@ -73,11 +77,20 @@ $tx-chart--layout-default: true !default;
 				flex-direction: row-reverse;
 			}
 
+			.chart--description {
+				& > *:first-child {
+					margin-top: 0;
+				}
+			}
+
 			.chart--legend {
 				& {
 					@include make-col-ready();
 					@include make-col(4);
-					margin-top: $spacing-default;
+				}
+
+				.chart--legend-title {
+					margin-top: rem(30px);
 				}
 
 				ul {

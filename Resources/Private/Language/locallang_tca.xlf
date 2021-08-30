@@ -12,11 +12,20 @@
 			<trans-unit id="tx_chart_domain_model_chart.alternative_title" resname="tx_chart_domain_model_chart.alternative_title">
 				<source>Alternative Title</source>
 			</trans-unit>
+			<trans-unit id="tx_chart_domain_model_chart.description" resname="tx_chart_domain_model_chart.description">
+				<source>Description</source>
+			</trans-unit>
 			<trans-unit id="tx_chart_domain_model_chart.label_axis_x" resname="tx_chart_domain_model_chart.label_axis_x">
 				<source>Label Axis X</source>
 			</trans-unit>
+			<trans-unit id="tx_chart_domain_model_chart.unit_axis_x" resname="tx_chart_domain_model_chart.unit_axis_x">
+				<source>Unit Axis X</source>
+			</trans-unit>
 			<trans-unit id="tx_chart_domain_model_chart.label_axis_y" resname="tx_chart_domain_model_chart.label_axis_y">
 				<source>Label Axis Y</source>
+			</trans-unit>
+			<trans-unit id="tx_chart_domain_model_chart.unit_axis_y" resname="tx_chart_domain_model_chart.unit_axis_y">
+				<source>Unit Axis Y</source>
 			</trans-unit>
 			<trans-unit id="tx_chart_domain_model_chart.data_type_axis_x" resname="tx_chart_domain_model_chart.data_type_axis_x">
 				<source>Data Type Axis X</source>
@@ -32,6 +41,9 @@
 			</trans-unit>
 			<trans-unit id="tx_chart_domain_model_chart.datasets" resname="tx_chart_domain_model_chart.datasets">
 				<source>Datasets</source>
+			</trans-unit>
+			<trans-unit id="tx_chart_domain_model_chart.dataset_title" resname="tx_chart_domain_model_chart.dataset_title">
+				<source>Dataset Title</source>
 			</trans-unit>
 			<trans-unit id="tx_chart_domain_model_dataset" resname="tx_chart_domain_model_dataset">
 				<source>Dataset</source>

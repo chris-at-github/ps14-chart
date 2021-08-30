@@ -1,10 +1,14 @@
 CREATE TABLE tx_chart_domain_model_chart (
 	title varchar(255) DEFAULT '' NOT NULL,
 	alternative_title varchar(255) DEFAULT '' NOT NULL,
+	description text,
 	label_axis_x varchar(255) DEFAULT '' NOT NULL,
+	unit_axis_x varchar(50) DEFAULT '' NOT NULL,
 	data_type_axis_x varchar(50) DEFAULT '' NOT NULL,
 	label_axis_y varchar(255) DEFAULT '' NOT NULL,
+	unit_axis_y varchar(50) DEFAULT '' NOT NULL,
 	data_type_axis_y varchar(50) DEFAULT '' NOT NULL,
+	dataset_title varchar(255) DEFAULT '' NOT NULL,
 	datasets int(11) unsigned DEFAULT '0' NOT NULL
 );
 

@@ -123,10 +123,12 @@ class LineChartDataProvider {
 			'configuration' => [
 				'axis' => [
 					'x' => [
-						'label' => $chart->getLabelAxisX()
+						'label' => $chart->getLabelAxisX(),
+						'unit' => $chart->getUnitAxisX(),
 					],
 					'y' => [
-						'label' => $chart->getLabelAxisY()
+						'label' => $chart->getLabelAxisY(),
+						'unit' => $chart->getUnitAxisY(),
 					]
 				],
 				'labels' => $this->getLabels($chart, $values),

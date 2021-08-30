@@ -36,11 +36,21 @@ class Chart extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $alternativeTitle = '';
 
 	/**
+	 * @var string
+	 */
+	protected $description = '';
+
+	/**
 	 * labelAxisX
 	 *
 	 * @var string
 	 */
 	protected $labelAxisX = '';
+
+	/**
+	 * @var string
+	 */
+	protected $unitAxisX = '';
 
 	/**
 	 * dataType
@@ -58,12 +68,22 @@ class Chart extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $labelAxisY = '';
 
 	/**
+	 * @var string
+	 */
+	protected $unitAxisY = '';
+
+	/**
 	 * dataType
 	 *
 	 * @var string
 	 * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
 	 */
 	protected $dataTypeAxisY = '';
+
+	/**
+	 * @var string
+	 */
+	protected $datasetTitle = '';
 
 	/**
 	 * datasets
@@ -235,5 +255,61 @@ class Chart extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function setDataTypeAxisY(string $dataTypeAxisY): void {
 		$this->dataTypeAxisY = $dataTypeAxisY;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getUnitAxisX(): string {
+		return $this->unitAxisX;
+	}
+
+	/**
+	 * @param string $unitAxisX
+	 */
+	public function setUnitAxisX(string $unitAxisX): void {
+		$this->unitAxisX = $unitAxisX;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getUnitAxisY(): string {
+		return $this->unitAxisY;
+	}
+
+	/**
+	 * @param string $unitAxisY
+	 */
+	public function setUnitAxisY(string $unitAxisY): void {
+		$this->unitAxisY = $unitAxisY;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getDescription(): string {
+		return $this->description;
+	}
+
+	/**
+	 * @param string $description
+	 */
+	public function setDescription(string $description): void {
+		$this->description = $description;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getDatasetTitle(): string {
+		return $this->datasetTitle;
+	}
+
+	/**
+	 * @param string $datasetTitle
+	 */
+	public function setDatasetTitle(string $datasetTitle): void {
+		$this->datasetTitle = $datasetTitle;
 	}
 }
