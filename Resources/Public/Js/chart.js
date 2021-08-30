@@ -84,7 +84,6 @@
 									}
 
 									if(context.parsed.y !== null) {
-										console.log(context.parsed.y);
 										label += new Intl.NumberFormat('de-DE', {
 											minimumFractionDigits: 2
 										}).format(context.parsed.y);
