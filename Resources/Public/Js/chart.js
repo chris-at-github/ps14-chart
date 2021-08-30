@@ -42,10 +42,6 @@
 			const ctx = node.querySelector('.chart--canvas');
 			const chart = new Chart(node.querySelector('.chart--canvas'), {
 				type: 'line',
-				data: {
-					labels: settings.labels,
-					datasets: settings.datasets
-				},
 				options: {
 					animations: animations,
 					interaction: {
@@ -72,7 +68,13 @@
 							},
 							callbacks: {
 								title: function(context) {
-									return settings.axis.x.label + ': ' + context[0].label;
+									var title = settings.axis.x.label + ': ' + context[0].label;
+
+									if(settings.axis.x.unit !== '') {
+										title += ' ' + settings.axis.x.unit;
+									}
+
+									return title;
 								},
 								label: function(context) {
 									var label = '  ' + context.dataset.label || '';
@@ -82,10 +84,14 @@
 									}
 
 									if(context.parsed.y !== null) {
+										console.log(context.parsed.y);
 										label += new Intl.NumberFormat('de-DE', {
 											minimumFractionDigits: 2
 										}).format(context.parsed.y);
-										label += ' ' + ' (' + settings.axis.x.unit + ')';
+
+										if(settings.axis.y.unit !== '') {
+											label += ' ' + settings.axis.y.unit;
+										}
 									}
 
 									return label;
@@ -146,6 +152,11 @@
 					}
 				}
 			});
+
+			setTimeout(function() {
+				chart.data.labels = settings.labels;
+				chart.data.datasets = settings.datasets;
+			}, 100);
 		});
 	});
 })();
