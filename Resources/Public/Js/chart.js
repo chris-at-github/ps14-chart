@@ -53,22 +53,94 @@
 					},
 					maintainAspectRatio: false,
 					plugins : {
-						legend: false
+						legend: false,
+						tooltip: {
+							backgroundColor: '#3e3e3e',
+							padding: 12,
+							caretPadding: 10,
+							cornerRadius: 2,
+							usePointStyle: true,
+							boxWidth: 9,
+							boxHeight: 9,
+							titleFont: {
+								family: "'Carlito', 'Calibri', sans-serif",
+								size: 15
+							},
+							bodyFont: {
+								family: "'Carlito', 'Calibri', sans-serif",
+								size: 15
+							},
+							callbacks: {
+								title: function(context) {
+									return settings.axis.x.label + ': ' + context[0].label;
+								},
+								label: function(context) {
+									var label = '  ' + context.dataset.label || '';
+
+									if(label !== '') {
+										label += ': ';
+									}
+
+									if(context.parsed.y !== null) {
+										label += new Intl.NumberFormat('de-DE', {
+											minimumFractionDigits: 2
+										}).format(context.parsed.y);
+										label += ' ' + ' (' + settings.axis.x.unit + ')';
+									}
+
+									return label;
+								}
+							}
+						}
 					},
 					scales: {
 						x: {
 							display: true,
 							title: {
 								display: true,
-								text: settings.axis.x.label
+								text: settings.axis.x.label + ' (' + settings.axis.x.unit + ')',
+								color: '#003865',
+								font: {
+									family: "'Carlito', 'Calibri', sans-serif",
+									size: 18
+								},
+								padding: 14
+							},
+							grid: {
+								borderColor: '#737373',
+								tickColor: '#ececed',
+								color: '#fff'
+							},
+							ticks: {
+								font: {
+									family: "'Carlito', 'Calibri', sans-serif",
+									size: 13
+								},
 							}
 						},
 						y: {
-							beginAtZero: true,
+							beginAtZero: false,
 							display: true,
 							title: {
 								display: true,
-								text: settings.axis.y.label
+								text: settings.axis.y.label + ' (' + settings.axis.y.unit + ')',
+								color: '#003865',
+								font: {
+									family: "'Carlito', 'Calibri', sans-serif",
+									size: 18
+								},
+								padding: 14
+							},
+							grid: {
+								borderColor: '#737373',
+								tickColor: '#ececed',
+								color: '#ececed'
+							},
+							ticks: {
+								font: {
+									family: "'Carlito', 'Calibri', sans-serif",
+									size: 13
+								},
 							}
 						}
 					}
