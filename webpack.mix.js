@@ -14,7 +14,7 @@ mix.options({
 	processCssUrls: false
 });
 
-mix.js('Resources/Public/Js/chart.js', 'assets/js/chart.js');
+mix.js('Resources/Public/Js/chart.js', 'assets/js/modules/chart.js');
 mix.sass('Resources/Public/Sass/chart.scss', 'assets/css/modules/chart.css')
 	.options({
 		postCss: [
@@ -28,4 +28,5 @@ mix.sass('Resources/Public/Sass/chart.scss', 'assets/css/modules/chart.css')
 
 if(mix.inProduction() === true) {
 	mix.minify(['../../../assets/css/modules/chart.css']);
+	mix.minify(['../../../assets/js/modules/chart.js']);
 }
