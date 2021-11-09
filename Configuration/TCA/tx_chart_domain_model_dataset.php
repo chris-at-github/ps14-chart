@@ -73,6 +73,7 @@ return [
 		],
 		'hidden' => [
 			'exclude' => true,
+			'l10n_mode' => 'exclude',
 			'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.visible',
 			'config' => [
 				'type' => 'check',
@@ -126,6 +127,7 @@ return [
 		],
 		'color' => [
 			'exclude' => true,
+			'l10n_mode' => 'exclude',
 			'label' => 'LLL:EXT:chart/Resources/Private/Language/locallang_tca.xlf:tx_chart_domain_model_dataset.color',
 			'config' => [
 				'type' => 'select',

@@ -165,11 +165,12 @@ return [
 			'config' => [
 				'type' => 'input',
 				'size' => 40,
-				'eval' => 'trim'
+				'eval' => 'trim',
 			],
 		],
 		'data_type_axis_x' => [
 			'exclude' => true,
+			'l10n_mode' => 'exclude',
 			'label' => 'LLL:EXT:chart/Resources/Private/Language/locallang_tca.xlf:tx_chart_domain_model_chart.data_type_axis_x',
 			'config' => [
 				'type' => 'select',
@@ -204,6 +205,7 @@ return [
 		],
 		'data_type_axis_y' => [
 			'exclude' => true,
+			'l10n_mode' => 'exclude',
 			'label' => 'LLL:EXT:chart/Resources/Private/Language/locallang_tca.xlf:tx_chart_domain_model_chart.data_type_axis_y',
 			'config' => [
 				'type' => 'select',
