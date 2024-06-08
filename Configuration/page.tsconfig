@@ -1,0 +1,11 @@
+TCEFORM {
+	tx_chart_domain_model_dataset {
+		color {
+			addItems {
+				cc033d = Red (#cc033d)
+				737373 = Gray (#737373)
+				003865 = Blue (#003865)
+			}
+		}
+	}
+}

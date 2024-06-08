@@ -1,4 +1,5 @@
 <?php
+
 return [
 	'ctrl' => [
 		'title' => 'LLL:EXT:chart/Resources/Private/Language/locallang_tca.xlf:tx_chart_domain_model_chart',
@@ -17,11 +18,11 @@ return [
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		],
+		'security' => [
+			'ignorePageTypeRestriction' => true,
+		],
 		'searchFields' => 'title,alternative_title,label_axis_x,label_axis_y',
-		'iconfile' => 'EXT:chart/Resources/Public/Icons/tx_chart_domain_model_chart.gif'
-	],
-	'interface' => [
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, alternative_title, description, label_axis_x, unit_axis_x, data_type_axis_x, label_axis_y, unit_axis_y, data_type_axis_y, dataset_title, datasets',
+		'iconfile' => 'EXT:chart/Resources/Public/Icons/chart-records.svg'
 	],
 	'types' => [
 		'1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, alternative_title, description, label_axis_x, unit_axis_x, data_type_axis_x, label_axis_y, unit_axis_y, data_type_axis_y, dataset_title, datasets, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],

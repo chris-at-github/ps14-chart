@@ -17,11 +17,11 @@ return [
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		],
+		'security' => [
+			'ignorePageTypeRestriction' => true,
+		],
 		'searchFields' => 'title,pi_flexform',
-		'iconfile' => 'EXT:chart/Resources/Public/Icons/tx_chart_domain_model_value.gif'
-	],
-	'interface' => [
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, pi_flexform',
+		'iconfile' => 'EXT:chart/Resources/Public/Icons/chart-records.svg'
 	],
 	'types' => [
 		'1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, pi_flexform, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],

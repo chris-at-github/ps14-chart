@@ -25,69 +25,70 @@ class DataValueProvider extends AbstractProvider implements ProviderInterface {
 	/**
 	 * @var string
 	 */
-	protected $tableName = 'tx_chart_domain_model_value';
+	protected ?string $tableName = 'tx_chart_domain_model_value';
 
 	/**
 	 * @var string
 	 */
-	protected $fieldName = 'pi_flexform';
+	protected ?string $fieldName = 'pi_flexform';
 
 	/**
 	 * @var array
 	 */
 	protected $fieldsDefault = [];
 
-	/**
-	 * @var ObjectManager
-	 */
-	protected $objectManager;
-
-	/**
-	 * @return void
-	 */
-	public function __construct()	{
-		$this->objectManager = GeneralUtility::makeInstance(ObjectManager::class);
-	}
+//	/**
+//	 * @var ObjectManager
+//	 */
+//	protected $objectManager;
+//
+//	/**
+//	 * @return void
+//	 */
+//	public function __construct()	{
+//		$this->objectManager = GeneralUtility::makeInstance(ObjectManager::class);
+//	}
 
 	/**
 	 * @param array $row
 	 * @return \FluidTYPO3\Flux\Form\FormInterface|\FluidTYPO3\Flux\Form\Form|null
 	 */
-	public function getForm(array $row) {
+	public function getForm(array $row, ?string $forField = null): ?Form {
+		return parent::getForm($row, $forField);
 
-		$form = \FluidTYPO3\Flux\Form::create();
-
-		/** @var Chart $chart */
-		$chart = $this->objectManager->get(ChartRepository::class)->findByUid($this->getChartUid($row));
-
-		if(empty($chart) === false) {
-			$field = $form->createField(
-				$this->getFieldType($chart->getDataTypeAxisX()),
-				'valueAxisX',
-				$chart->getLabelAxisX()
-			);
-
-			$field->setValidate($this->getFieldValidation($chart->getDataTypeAxisX()));
-			$field->setConfig($this->getFieldConfiguration($chart->getDataTypeAxisX()));
-
-			$form->add($field);
-
-			/** @var Dataset $dataset */
-			foreach($chart->getDatasets() as $dataset) {
-				$field = $form->createField(
-					$this->getFieldType($chart->getDataTypeAxisY()),
-					$dataset->getUid(),
-					$dataset->getTitle()
-				);
-
-				$field->setValidate($this->getFieldValidation($chart->getDataTypeAxisY()));
-				$field->setConfig($this->getFieldConfiguration($chart->getDataTypeAxisY()));
-
-				$form->add($field);
-			}
-		}
-
-		return $form;
+//		$form = \FluidTYPO3\Flux\Form::create();
+//
+//		/** @var Chart $chart */
+//		$chart = $this->objectManager->get(ChartRepository::class)->findByUid($this->getChartUid($row));
+//
+//		if(empty($chart) === false) {
+//			$field = $form->createField(
+//				$this->getFieldType($chart->getDataTypeAxisX()),
+//				'valueAxisX',
+//				$chart->getLabelAxisX()
+//			);
+//
+//			$field->setValidate($this->getFieldValidation($chart->getDataTypeAxisX()));
+//			$field->setConfig($this->getFieldConfiguration($chart->getDataTypeAxisX()));
+//
+//			$form->add($field);
+//
+//			/** @var Dataset $dataset */
+//			foreach($chart->getDatasets() as $dataset) {
+//				$field = $form->createField(
+//					$this->getFieldType($chart->getDataTypeAxisY()),
+//					$dataset->getUid(),
+//					$dataset->getTitle()
+//				);
+//
+//				$field->setValidate($this->getFieldValidation($chart->getDataTypeAxisY()));
+//				$field->setConfig($this->getFieldConfiguration($chart->getDataTypeAxisY()));
+//
+//				$form->add($field);
+//			}
+//		}
+//
+//		return $form;
 	}
 
 	/**
@@ -97,22 +98,22 @@ class DataValueProvider extends AbstractProvider implements ProviderInterface {
 	protected function getChartUid(array $row): int {
 		$uid = 0;
 
-		if(isset($row['content']) === false) {
-			$request = GeneralUtility::_GP('ajax');
-
-			// Content UID aus dem Ajax-Request auslesen
-			if(isset($request[0]) === true && preg_match('/(.*)-(.*)-(\d+)-(.*)-(.*)$/', $request[0], $match)) {
-				$row = [
-					'content' => (int) $match[3]
-				];
-			}
-		}
-
-		$content = \TYPO3\CMS\Backend\Utility\BackendUtility::getRecord('tt_content', (int) $row['content'], 'tx_chart_chart');
-
-		if(empty($content['tx_chart_chart']) === false) {
-			$uid = (int) $content['tx_chart_chart'];
-		}
+//		if(isset($row['content']) === false) {
+//			$request = GeneralUtility::_GP('ajax');
+//
+//			// Content UID aus dem Ajax-Request auslesen
+//			if(isset($request[0]) === true && preg_match('/(.*)-(.*)-(\d+)-(.*)-(.*)$/', $request[0], $match)) {
+//				$row = [
+//					'content' => (int) $match[3]
+//				];
+//			}
+//		}
+//
+//		$content = \TYPO3\CMS\Backend\Utility\BackendUtility::getRecord('tt_content', (int) $row['content'], 'tx_chart_chart');
+//
+//		if(empty($content['tx_chart_chart']) === false) {
+//			$uid = (int) $content['tx_chart_chart'];
+//		}
 
 		return $uid;
 	}
@@ -124,9 +125,9 @@ class DataValueProvider extends AbstractProvider implements ProviderInterface {
 	protected function getFieldType(string $dataType): string {
 		$type = '';
 
-		if($dataType === 'int' || $dataType === 'float') {
-			$type = Input::class;
-		}
+//		if($dataType === 'int' || $dataType === 'float') {
+//			$type = Input::class;
+//		}
 
 		return $type;
 	}
@@ -138,13 +139,13 @@ class DataValueProvider extends AbstractProvider implements ProviderInterface {
 	protected function getFieldValidation(string $dataType): string {
 		$validation = 'trim';
 
-		if($dataType === 'int') {
-			$validation = ',int';
-		}
-
-		if($dataType === 'float') {
-			$validation = ',Ps\Xo\Evaluation\FloatEvaluation';
-		}
+//		if($dataType === 'int') {
+//			$validation = ',int';
+//		}
+//
+//		if($dataType === 'float') {
+//			$validation = ',Ps\Xo\Evaluation\FloatEvaluation';
+//		}
 
 		return $validation;
 	}
@@ -156,9 +157,9 @@ class DataValueProvider extends AbstractProvider implements ProviderInterface {
 	protected function getFieldConfiguration(string $dataType): array {
 		$configuration = [];
 
-		if($dataType === 'int' || $dataType === 'float') {
-			$configuration['size'] = 40;
-		}
+//		if($dataType === 'int' || $dataType === 'float') {
+//			$configuration['size'] = 40;
+//		}
 
 		return $configuration;
 	}

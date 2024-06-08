@@ -17,7 +17,7 @@ namespace Ps14\Chart\Domain\Repository;
 /**
  * The repository for Charts
  */
-class ValueRepository extends \Ps\Xo\Domain\Repository\Repository {
+class ValueRepository extends \Ps14\Foundation\Domain\Repository\Repository {
 
 	/**
 	 * @var array

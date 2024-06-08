@@ -1,28 +1,32 @@
 {
-    "name": "ps14/chart",
-    "type": "typo3-cms-extension",
-    "description": "",
-    "authors": [
-        {
-            "name": "Christian Pschorr",
-            "role": "Developer"
-        }
-    ],
-    "require": {
-        "typo3/cms-core": "^10.4"
-    },
-    "autoload": {
-        "psr-4": {
-            "Ps14\\Chart\\": "Classes"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Ps14\\Chart\\Tests\\": "Tests"
-        }
-    },
-    "replace": {
-        "ps14/chart": "self.version",
-        "typo3-ter/chart": "self.version"
-    }
+	"name": "ps14/chart",
+	"type": "typo3-cms-extension",
+	"description": "Chart extension for inputting compressed air data into products",
+	"keywords": [
+		"TYPO3",
+		"extension"
+	],
+	"homepage": "http://ps14.de/",
+	"require": {
+		"typo3/cms-core": "^12.4"
+	},
+	"suggest": {
+	},
+	"autoload": {
+		"psr-4": {
+			"Ps14\\Chart\\": "Classes"
+		}
+	},
+	"license": "closed",
+	"authors": [
+		{
+			"name": "Christian Pschorr",
+			"email": "pschorr.christian@gmail.com"
+		}
+	],
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "chart"
+		}
+	}
 }

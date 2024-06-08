@@ -12,19 +12,17 @@
 
 $EM_CONF[$_EXTKEY] = [
 	'title' => 'Ps14 Chart',
-	'description' => '',
-	'category' => 'plugin',
+	'description' => 'Chart extension for inputting compressed air data into products',
+	'category' => 'module',
 	'author' => 'Christian Pschorr',
 	'author_email' => 'pschorr.christian@gmail.com',
-	'state' => 'alpha',
-	'createDirs' => '',
-	'clearCacheOnLoad' => 0,
-	'version' => '1.0.0',
+	'state' => 'beta',
+	'version' => '2.0.0',
 	'constraints' => [
 		'depends' => [
-			'typo3' => '10.4.0-10.4.99',
-			'xo' => '1.0.0-1.10.99',
-			'flux' => '9.5.0-9.5.99',
+			'typo3' => '12.0.0-12.4.99',
+			'ps14_foundation' => '2.0.0-2.99.99',
+			'flux' => '10.0.10-10.9.99',
 		],
 		'conflicts' => [],
 		'suggests' => [],

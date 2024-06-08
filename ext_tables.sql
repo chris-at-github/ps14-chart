@@ -20,11 +20,5 @@ CREATE TABLE tx_chart_domain_model_dataset (
 
 CREATE TABLE tx_chart_domain_model_value (
 	title varchar(255) DEFAULT '' NOT NULL,
-	pi_flexform text,
-	content int(11) DEFAULT '0' NOT NULL
-);
-
-CREATE TABLE tt_content (
-	tx_chart_chart int(11) unsigned DEFAULT '0' NOT NULL,
-	tx_chart_values int(11) unsigned DEFAULT '0' NOT NULL
+	pi_flexform text
 );
