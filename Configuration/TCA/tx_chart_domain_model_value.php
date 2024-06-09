@@ -130,7 +130,7 @@ return [
 			'label' => 'LLL:EXT:chart/Resources/Private/Language/locallang_tca.xlf:tx_chart_domain_model_value.pi_flexform',
 			'config' => [
 				'type' => 'flex',
-				'renderType' => 'flexNoTab',
+//				'renderType' => 'flexNoTab',
 				'ds' => [
 					'default' => '<T3DataStructure><ROOT><el></el></ROOT></T3DataStructure>'
 				],

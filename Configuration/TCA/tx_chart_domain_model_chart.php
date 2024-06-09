@@ -140,7 +140,7 @@ return [
 			'config' => [
 				'type' => 'text',
 				'enableRichtext' => true,
-				'richtextConfiguration' => 'xoMinimal',
+				'richtextConfiguration' => 'ps14Minimal',
 				'fieldControl' => [
 					'fullScreenRichtext' => [
 						'disabled' => false,
