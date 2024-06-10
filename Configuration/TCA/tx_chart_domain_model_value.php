@@ -20,6 +20,7 @@ return [
 		'security' => [
 			'ignorePageTypeRestriction' => true,
 		],
+		'hideTable' => true,
 		'searchFields' => 'title,pi_flexform',
 		'iconfile' => 'EXT:chart/Resources/Public/Icons/chart-records.svg'
 	],
