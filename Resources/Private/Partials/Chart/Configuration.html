@@ -3,7 +3,9 @@
 	<f:section name="Main">
 		<script>
 			xna.settings.charts = xna.settings.charts || {};
-			xna.settings.charts[{identifier}] = {fo:json.encode(value: configuration)};
+			xna.settings.charts[{identifier}] = {};
+			xna.settings.charts[{identifier}].data = {fo:json.encode(value: configuration)};
+			xna.settings.charts[{identifier}].options = {fo:json.encode(value: settings.chart)};
 		</script>
 	</f:section>
 </html>
