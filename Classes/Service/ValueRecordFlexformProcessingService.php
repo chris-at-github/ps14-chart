@@ -13,17 +13,26 @@ class ValueRecordFlexformProcessingService {
 
 	/**
 	 * @param int $uid
-	 * @param string $title
+	 * @param array $title
 	 */
-	protected function updateTitle(int $uid, string $title) {
+	protected function updateData(int $uid, array $data) {
 		$queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tx_chart_domain_model_value');
 		$queryBuilder
 			->update('tx_chart_domain_model_value')
 			->where(
 				$queryBuilder->expr()->eq('uid', $queryBuilder->createNamedParameter($uid, \PDO::PARAM_INT))
-			)
-			->set('title', $title, false)
-			->execute();
+			);
+
+
+		if(empty($data['title']) === false) {
+			$queryBuilder->set('title', $data['title']);
+		}
+
+		if(empty($data['pi_flexform']) === false) {
+			$queryBuilder->set('pi_flexform', $data['pi_flexform']);
+		}
+
+		$queryBuilder->executeStatement();
 	}
 
 	/**
@@ -34,6 +43,9 @@ class ValueRecordFlexformProcessingService {
 	 * @param \TYPO3\CMS\Core\DataHandling\DataHandler $dataHandler
 	 */
 	function processDatamap_afterDatabaseOperations($status, $table, $id, &$fields, &$dataHandler) {
+
+//		DebuggerUtility::var_dump($table);
+//		die();
 
 		if($table == 'tx_chart_domain_model_value' && isset($fields['pi_flexform']) === true) {
 
@@ -62,17 +74,22 @@ class ValueRecordFlexformProcessingService {
 					->where(
 						$queryBuilder->expr()->eq('l10n_parent', $queryBuilder->createNamedParameter((int) $id, \PDO::PARAM_INT))
 					)
-					->execute();
+					->executeQuery();
 
-				while($row = $statement->fetch()) {
+				while($row = $statement->fetchAssociative()) {
 					$translations[(int) $row['sys_language_uid']] = (int) $row['uid'];
 				}
 
 				if(empty($flexformData['valueAxisX']) === false) {
-					$this->updateTitle($record['uid'], $flexformData['valueAxisX']);
+					$this->updateData($record['uid'], [
+						'title' => $flexformData['valueAxisX']
+					]);
 
 					foreach($translations as $sysLanguageUid => $l10nUid) {
-						$this->updateTitle($l10nUid, $flexformData['valueAxisX']);
+						$this->updateData($l10nUid, [
+							'title' => $flexformData['valueAxisX'],
+							'pi_flexform' => $fields['pi_flexform']
+						]);
 					}
 				}
 			}
